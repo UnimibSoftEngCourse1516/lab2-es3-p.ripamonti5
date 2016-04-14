@@ -33,6 +33,87 @@ public class AssertionTest {
 // @Test (expected=AssertionError.class) public void error() {
 //      assert false;
 //  }
+    
+    @Test
+    public void assertGraterThanInt() {
+        try {
+            Assert.assertGraterThanInt(5,6);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Comparison failed!", exception.toString());
+        }
+        Assert.assertGraterThanInt(6,5);
+    }
+    
+    @Test
+    public void assertGraterThanByte() {
+        try {
+            Assert.assertGraterThanByte((byte)5, (byte)6);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Comparison failed!", exception.toString());
+        }
+        Assert.assertGraterThanByte((byte)6, (byte)5);
+    }
+    
+    @Test
+    public void assertGraterThanShort() {
+        try {
+            Assert.assertGraterThanShort((short)5,(short)6);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Comparison failed!", exception.toString());
+        }
+        Assert.assertGraterThanShort((short)6,(short)5);
+    }
+    
+    @Test
+    public void assertGraterThanLong() {
+        try {
+            Assert.assertGraterThanLong(5L,6L);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Comparison failed!", exception.toString());
+        }
+        Assert.assertGraterThanLong(6L,5L);
+    }
+    
+    @Test
+    public void assertGraterThanFloat() {
+        try {
+            Assert.assertGraterThanFloat(5.5F, 6.6F);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Comparison failed!", exception.toString());
+        }
+        Assert.assertGraterThanFloat(6.6F, 5.5F);
+    }
+    
+    @Test
+    public void assertGraterThanDouble() {
+        try {
+            Assert.assertGraterThanDouble(5.5D, 6.6D);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Comparison failed!", exception.toString());
+        }
+        Assert.assertGraterThanDouble(6.6D, 5.5D);
+    }
+    
+    @Test
+    public void assertGraterThanChar() {
+        try {
+            Assert.assertGraterThanChar('A','a');
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Comparison failed!", exception.toString());
+        }
+        Assert.assertGraterThanChar('a','A');
+    }
+    
+    @Test
+    public void assertGraterThanBoolean() {
+        try {
+            Assert.assertGraterThanBoolean(true,true);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Comparison failed!", exception.toString());
+        }
+        Assert.assertGraterThanBoolean(true,false);
+    }
+    
 
     @Test(expected = AssertionError.class)
     public void fails() {

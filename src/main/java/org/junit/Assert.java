@@ -27,6 +27,94 @@ public class Assert {
      */
     protected Assert() {
     }
+    
+    /**
+     * Assert if <arg1> is grater than <arg2>
+     * @param arg1 int
+     * @param arg2 int
+     */
+    public static void assertGraterThanInt(int arg1,int arg2){
+        if(arg1 <= arg2){
+            fail("Comparison failed!");
+        }
+    }
+    
+    /**
+     * Assert if <arg1> is grater than <arg2>
+     * @param arg1 byte
+     * @param arg2 byte
+     */
+    public static void assertGraterThanByte(byte arg1,byte arg2){
+        if(arg1 <= arg2){
+            fail("Comparison failed!");
+        }
+    }
+    
+    /**
+     * Assert if <arg1> is grater than <arg2>
+     * @param arg1 short
+     * @param arg2 short
+     */
+    public static void assertGraterThanShort(short arg1,short arg2){
+        if(arg1 <= arg2){
+            fail("Comparison failed!");
+        }
+    }
+    
+    /**
+     * Assert if <arg1> is grater than <arg2>
+     * @param arg1 long
+     * @param arg2 long
+     */
+    public static void assertGraterThanLong(long arg1,long arg2){
+        if(arg1 <= arg2){
+            fail("Comparison failed!");
+        }
+    }
+    
+    /**
+     * Assert if <arg1> is grater than <arg2>
+     * @param arg1 float
+     * @param arg2 float
+     */
+    public static void assertGraterThanFloat(float arg1,float arg2){
+        if(arg1 <= arg2){
+            fail("Comparison failed!");
+        }
+    }
+    
+    /**
+     * Assert if <arg1> is grater than <arg2>
+     * @param arg1 double
+     * @param arg2 double
+     */
+    public static void assertGraterThanDouble(double arg1,double arg2){
+        if(arg1 <= arg2){
+            fail("Comparison failed!");
+        }
+    }
+    
+    /**
+     * Assert if <arg1> is grater than <arg2>
+     * @param arg1 char
+     * @param arg2 char
+     */
+    public static void assertGraterThanChar(char arg1,char arg2){
+        if(arg1 <= arg2){
+            fail("Comparison failed!");
+        }
+    }
+    
+    /**
+     * Assert if <arg1> is grater than <arg2>
+     * @param arg1 boolean
+     * @param arg2 boolean
+     */
+    public static void assertGraterThanBoolean(boolean arg1,boolean arg2){
+        if(!(arg1 == true && arg2 == false)){
+            fail("Comparison failed!");
+        }
+    }
 
     /**
      * Asserts that a condition is true. If it isn't it throws an
