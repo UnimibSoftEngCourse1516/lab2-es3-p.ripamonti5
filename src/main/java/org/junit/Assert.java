@@ -27,6 +27,29 @@ public class Assert {
      */
     protected Assert() {
     }
+    
+    /**
+     * Assert if <o1> is grater than <o2>
+     * @param o1 Object
+     * @param o2 Object
+     */
+    public static void assertGreaterThan(Object o1, Object o2){
+        //Check null
+        if(o1 == null || o2 == null){
+            fail("Cannot assert null object");
+        }
+        
+        //Check same
+        if(o1.equals(o2)){
+            fail("Objects are equals");
+        }
+        
+        //Check grater than
+        if(o1.toString().compareTo(o2.toString()) < 0){
+            fail("The First element is less than Second");
+        }
+    }
+    
 
     /**
      * Asserts that a condition is true. If it isn't it throws an

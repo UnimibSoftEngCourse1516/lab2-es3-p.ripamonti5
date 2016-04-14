@@ -33,6 +33,61 @@ public class AssertionTest {
 // @Test (expected=AssertionError.class) public void error() {
 //      assert false;
 //  }
+    
+    @Test
+    public void greaterThan() {
+        //Test null object
+        try {
+            Assert.assertGreaterThan(null, 5);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Cannot assert null object", exception.toString());
+        }
+        try {
+            Assert.assertGreaterThan(5, null);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Cannot assert null object", exception.toString());
+        }
+        
+        //Test equals object
+        try {
+            Object o = new Object();
+            Assert.assertGreaterThan(o, o);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Objects are equals", exception.toString());
+        }
+        try {
+            Assert.assertGreaterThan(4, 4);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Objects are equals", exception.toString());
+        }
+        try {
+            Assert.assertGreaterThan("abc", "abc");
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Objects are equals", exception.toString());
+        }
+        try {
+            Assert.assertGreaterThan(true, true);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: Objects are equals", exception.toString());
+        }
+        
+        //Check grater than
+        Assert.assertGreaterThan(5, 3);
+        Assert.assertGreaterThan(4.6, 4.59);
+        Assert.assertGreaterThan("a", "A");
+        Assert.assertGreaterThan(2, -20);
+        
+        try {
+            Assert.assertGreaterThan(5, 2);
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: The First element is less than Second", exception.toString());
+        }
+        try {
+            Assert.assertGreaterThan("A", "a");
+        } catch (AssertionError exception) {
+            assertEquals("java.lang.AssertionError: The First element is less than Second", exception.toString());
+        }
+    }
 
     @Test(expected = AssertionError.class)
     public void fails() {
